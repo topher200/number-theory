@@ -17,11 +17,20 @@ def play_randomly():
 
   return ((roll1 == guess1) and (roll2 == guess2))
 
+def play_intelligently():
+  roll1 = roll_die()
+  roll2 = roll_die()
+
+  guess1 = roll2
+  guess2 = roll1
+
+  return ((roll1 == guess1) and (roll2 == guess2))
+
 wins = 0
 losses = 0
-for i in range(10000):
-  # Play, and record the outcome
-  if play_randomly():
+for i in range(100000):
+  # Change this function to play the game differently
+  if play_intelligently():
     wins += 1
   else:
     losses += 1
