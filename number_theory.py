@@ -8,20 +8,20 @@ def choose_randomly():
 def roll_die():
   return choose_randomly()
 
-def play(guess_function):
+def play_randomly():
   roll1 = roll_die()
   roll2 = roll_die()
 
-  guess1 = guess_function()
-  guess2 = guess_function()
+  guess1 = choose_randomly()
+  guess2 = choose_randomly()
 
   return ((roll1 == guess1) and (roll2 == guess2))
 
 wins = 0
 losses = 0
-for i in range(1000000):
+for i in range(10000):
   # Play, and record the outcome
-  if play(choose_randomly):
+  if play_randomly():
     wins += 1
   else:
     losses += 1
